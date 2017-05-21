@@ -8,7 +8,9 @@ def index(request):
         request.session["word"] =''
         data={"attempt_num": request.session["attempt_num"], "word": request.session["word"]}
         print data
-    return render(request, 'random_word/index.html', data)
+        return render(request, 'random_word/index.html', data)
+    else:
+        return render(request, 'random_word/index.html')
 
 
 def generate(request):
